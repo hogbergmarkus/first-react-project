@@ -1,10 +1,10 @@
 import "./App.css";
-import Clock from "./components/Clock";
+import LifeCyclesCDM from "./components/LifeCyclesCDM";
 
 function App() {
     return (
         <div className="App">
-            <Clock />
+            <LifeCyclesCDM />
         </div>
     );
 }
