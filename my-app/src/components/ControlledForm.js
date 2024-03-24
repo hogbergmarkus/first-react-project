@@ -11,28 +11,21 @@ export class ControlledForm extends Component {
         };
     }
 
-    // handleNameChange = (event) => {
-    //     this.setState({
-    //         name: event.target.value,
-    //     });
-    // };
-
-    // handleCategoryChange = (event) => {
-    //     this.setState({
-    //         category: event.target.value,
-    //     });
-    // };
-
-    // handleCommentsChange = (event) => {
-    //     this.setState({
-    //         comments: event.target.value,
-    //     });
-    // };
-
-    handleChange = (event) => {
-        const { name, value } = event.target;
+    handleNameChange = (event) => {
         this.setState({
-            [name]: value,
+            name: event.target.value,
+        });
+    };
+
+    handleCategoryChange = (event) => {
+        this.setState({
+            category: event.target.value,
+        });
+    };
+
+    handleCommentsChange = (event) => {
+        this.setState({
+            comments: event.target.value,
         });
     };
 
@@ -50,7 +43,7 @@ export class ControlledForm extends Component {
                         <label htmlFor="id-name">Your Name: </label>
                         <input
                             value={this.state.name}
-                            onChange={this.handleChange}
+                            onChange={this.handleNameChange}
                             id="id-name"
                             name="name"
                             type="text"
@@ -60,7 +53,7 @@ export class ControlledForm extends Component {
                         <label htmlFor="id-category">Query Category: </label>
                         <select
                             value={this.state.category}
-                            onChange={this.handleChange}
+                            onChange={this.handleCategoryChange}
                             id="id-category"
                             name="category"
                         >
@@ -68,17 +61,17 @@ export class ControlledForm extends Component {
                             <option value="order">Order issue</option>
                             <option value="general">General inquiry</option>
                         </select>
-                        <input type="submit" value="Submit" />
                     </div>
                     <div>
                         <label htmlFor="id-comments">Comments: </label>
                         <textarea
                             value={this.state.comments}
-                            onChange={this.handleChange}
+                            onChange={this.handleCommentsChange}
                             id="id-comments"
                             name="comments"
                         />
                     </div>
+                    <input type="submit" value="Submit" />
                 </form>
             </div>
         );
